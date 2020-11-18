@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'materializecssform',
     'Account',
+    'Management',
+    'Quotation',
+    'Reports',
 ]
 
 MIDDLEWARE = [
