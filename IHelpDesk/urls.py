@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from HelpDesk.views import login
+from django.urls.conf import include
+from Management.views import home
+from django.conf.urls.static import static
+from django.conf import settings
+# from Account.views import 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login', login)
-]
+    path('', include('django.contrib.auth.urls')),
+    path('', home, name='home'),
+] + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
